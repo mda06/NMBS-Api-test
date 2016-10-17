@@ -2,6 +2,8 @@ package com.nmbs.api.model;
 
 import java.util.List;
 
+import com.nmbs.api.util.DateUtil;
+
 public class Connection {
 	private int id;
 	private int duration;
@@ -93,7 +95,7 @@ public class Connection {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Connection from " + departure.getToStation().getName() + " to " + arrival.getToStation().getName());
-		sb.append("\n-Takes " + getDurationInMinutes() + " min");
+		sb.append("\n-Departure at " + DateUtil.timeStampToDate(departure.getDepartureInfo().getTimeStamp()) + " arrival at " + DateUtil.timeStampToDate(arrival.getDepartureInfo().getTimeStamp())  + " takes " + getDurationInMinutes() + " min");
 		if(vias.size() != 0) {
 			sb.append("\n\tVia: ");
 			for(Via v : vias)

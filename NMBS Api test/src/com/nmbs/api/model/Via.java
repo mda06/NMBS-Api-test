@@ -106,8 +106,8 @@ public class Via {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("->Arrival " + station.getName() + " on " + arrInfo.toString());
-		sb.append("\n\t<-Departure to " + direction + " at " + depInfo.toString());
+		sb.append("->Take the train direction " + direction + " stop at " + station.getName() + " on " + arrInfo.toString());
+		sb.append("\n\t<-Next train at " + depInfo.toString());
 		return sb.toString();
 	}
 }
